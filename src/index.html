@@ -3,9 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wbpack Exercise</title>
+    <title>Leader Board</title>
 </head>
 <body>
-    
+    <div class="container">
+        <div class="row"></div>
+        <div class="row">
+            <div class="col-6 container">
+                <div class="row">
+                    <div class="col-8">
+                        Recent scores
+                    </div>
+                    <span class="col-4">
+                        Refresh
+                    </span>
+                </div>
+                <div class="row vstack" id="scoresContainer">
+                    <div class="col">Name: 100</div>
+                    <div class="col">Name: 20</div>
+                    <div class="col">Name: 50</div>
+                    <div class="col">Name: 78</div>
+                </div>
+            </div>
+            <form class="col-6 container">
+                <div class="row">
+                    Add your score
+                </div>
+                <div class="row">
+                    <div class="col mb-3">
+                        <label for="userName" class="form-label">Name</label>
+                        <input type="text" name="userName" id="userName" placeholder="your name goes here">
+                    </div>
+                    <div class="col mb-3">
+                        <label for="userScore" class="form-laber">Score</label>
+                        <input type="text" name="userScore" id="userScore">
+                    </div>
+                </div>
+                <div class="row">
+                    <button class="btn btn-dark" type="submit">Submit score</button>
+                </div>
+            </form>
+        </div>
+    </div>
 </body>
 </html>
