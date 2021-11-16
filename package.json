@@ -1,5 +1,5 @@
 {
-  "name": "webpack_boilerplate",
+  "name": "leader-board",
   "version": "1.0.0",
   "description": "",
   "private": true,
@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tacodtripe/webpack_boilerplate.git"
+    "url": "git+https://github.com/tacodtripe/leader-board.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/tacodtripe/webpack_boilerplate/issues"
+    "url": "https://github.com/tacodtripe/leader-board/issues"
   },
-  "homepage": "https://github.com/tacodtripe/webpack_boilerplate#readme",
+  "homepage": "https://github.com/tacodtripe/leader-board/tree/development/dist",
   "devDependencies": {
     "css-loader": "^6.5.1",
     "html-webpack-plugin": "^5.5.0",
