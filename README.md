@@ -11,7 +11,8 @@ This is a template to be the start point for future projects where webpack is in
 ## Getting Started - How to deploy on your machine
 
 - Clone the project
-- run `npm start` at your command line
+- run `npm install` at your command line
+- run `npm start`
 
 ### Prerequisites
 
