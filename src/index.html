@@ -6,41 +6,39 @@
     <title>Leader Board</title>
 </head>
 <body>
-    <div class="container">
-        <div class="row"></div>
+    <div class="container pb-1">
         <div class="row">
-            <div class="col-6 container">
-                <div class="row">
-                    <div class="col-8">
-                        Recent scores
+            <h1>Leader board</h1>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-5 container no-x-margin">
+                <div class="row section-header justify-content-between mb-3">
+                    <div class="col-4 no-x-padding">
+                        <h4>Recent scores</h4>
                     </div>
-                    <span class="col-4">
-                        Refresh
-                    </span>
+                    <button class="btn col-2 black-border section-header-text" type="submit">Refresh</button>
                 </div>
-                <div class="row vstack" id="scoresContainer">
+                <div class="row vstack black-border" id="scoresContainer">
                     <div class="col">Name: 100</div>
                     <div class="col">Name: 20</div>
                     <div class="col">Name: 50</div>
                     <div class="col">Name: 78</div>
                 </div>
             </div>
-            <form class="col-6 container">
-                <div class="row">
-                    Add your score
+            <form class="col-5 container no-x-margin">
+                <div class="row section-header justify-content-center mb-3">
+                    <h4 class="col-6 no-x-padding">Add your score</h4>
                 </div>
-                <div class="row">
-                    <div class="col mb-3">
-                        <label for="userName" class="form-label">Name</label>
-                        <input type="text" name="userName" id="userName" placeholder="your name goes here">
+                <div class="row container">
+                    <div class="row mb-3 justify-content-center">
+                        <input class="col-6 black-border" type="text" name="userName" id="userName" placeholder="Your name">
                     </div>
-                    <div class="col mb-3">
-                        <label for="userScore" class="form-laber">Score</label>
-                        <input type="text" name="userScore" id="userScore">
+                    <div class="row mb-3 justify-content-center">
+                        <input class="col-6 black-border" type="text" name="userScore" id="userScore" placeholder="Your score">
                     </div>
                 </div>
-                <div class="row">
-                    <button class="btn btn-dark" type="submit">Submit score</button>
+                <div class="row justify-content-center">
+                    <button class="btn col-3 ms-5" type="submit">Submit score</button>
                 </div>
             </form>
         </div>
