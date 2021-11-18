@@ -1,5 +1,42 @@
 /* eslint-disable no-unused-vars */
-import _ from 'lodash';
+import _, { get } from 'lodash';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './style.css';
+
+const requestUrl = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/0pCiglrVtP9Y26ppM44Z/scores/';
+const scoreBoard = document.querySelector('#scoresContainer');
+
+async function newScore(user, score) {
+  const response = await fetch(requestUrl, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      user,
+      score,
+    }),
+  });
+  return response.json();
+}
+
+function populateBoard(obj) {
+  const arr = obj.result;
+  arr.forEach((element) => {
+    const cont = document.createElement('div');
+    cont.classList.add('col');
+    cont.textContent = `${element.user}: ${element.score}`;
+    scoreBoard.appendChild(cont);
+  });
+}
+
+const request = new XMLHttpRequest();
+
+request.open('GET', requestUrl);
+request.responseType = 'json';
+request.send();
+request.onload = () => {
+  const scores = request.response;
+  populateBoard(scores);
+};
