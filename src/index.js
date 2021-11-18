@@ -6,6 +6,7 @@ import './style.css';
 
 const requestUrl = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/0pCiglrVtP9Y26ppM44Z/scores/';
 const scoreBoard = document.querySelector('#scoresContainer');
+const refreshButton = document.querySelector('#refreshButton');
 
 async function newScore(user, score) {
   const response = await fetch(requestUrl, {
@@ -23,6 +24,9 @@ async function newScore(user, score) {
 
 function populateBoard(obj) {
   const arr = obj.result;
+  while (scoreBoard.firstChild) {
+    scoreBoard.removeChild(scoreBoard.firstChild);
+  }
   arr.forEach((element) => {
     const cont = document.createElement('div');
     cont.classList.add('col');
@@ -32,7 +36,6 @@ function populateBoard(obj) {
 }
 
 const request = new XMLHttpRequest();
-
 request.open('GET', requestUrl);
 request.responseType = 'json';
 request.send();
@@ -40,3 +43,7 @@ request.onload = () => {
   const scores = request.response;
   populateBoard(scores);
 };
+
+refreshButton.addEventListener('click', () => {
+  populateBoard(request.response);
+});
