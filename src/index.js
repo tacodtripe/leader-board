@@ -7,6 +7,9 @@ import './style.css';
 const requestUrl = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/0pCiglrVtP9Y26ppM44Z/scores/';
 const scoreBoard = document.querySelector('#scoresContainer');
 const refreshButton = document.querySelector('#refreshButton');
+const userName = document.querySelector('#userName');
+const userScore = document.querySelector('#userScore');
+const submitButton = document.querySelector('#submitScoreButton');
 
 async function newScore(user, score) {
   const response = await fetch(requestUrl, {
@@ -45,5 +48,10 @@ request.onload = () => {
 };
 
 refreshButton.addEventListener('click', () => {
+  populateBoard(request.response);
+});
+
+submitButton.addEventListener('click', () => {
+  newScore(userName.value, userScore.value);
   populateBoard(request.response);
 });
