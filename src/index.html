@@ -16,13 +16,9 @@
                     <div class="col-4 no-x-padding">
                         <h4>Recent scores</h4>
                     </div>
-                    <button class="btn col-2 black-border section-header-text" type="submit">Refresh</button>
+                    <button class="btn col-2 black-border section-header-text" type="submit" id="refreshButton">Refresh</button>
                 </div>
                 <div class="row vstack black-border" id="scoresContainer">
-                    <div class="col">Name: 100</div>
-                    <div class="col">Name: 20</div>
-                    <div class="col">Name: 50</div>
-                    <div class="col">Name: 78</div>
                 </div>
             </div>
             <form class="col-5 container no-x-margin">
@@ -34,11 +30,11 @@
                         <input class="col-6 black-border" type="text" name="userName" id="userName" placeholder="Your name">
                     </div>
                     <div class="row mb-3 justify-content-center">
-                        <input class="col-6 black-border" type="text" name="userScore" id="userScore" placeholder="Your score">
+                        <input class="col-6 black-border" type="number" title="Only numbers allowed" name="userScore" id="userScore" placeholder="Your score">
                     </div>
                 </div>
                 <div class="row justify-content-center">
-                    <button class="btn col-3 ms-5" type="submit">Submit score</button>
+                    <button class="btn col-3 ms-5" type="submit" id="submitScoreButton">Submit score</button>
                 </div>
             </form>
         </div>
