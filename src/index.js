@@ -11,7 +11,7 @@ const userName = document.querySelector('#userName');
 const userScore = document.querySelector('#userScore');
 const submitButton = document.querySelector('#submitScoreButton');
 
-function populateBoard(obj) {
+const populateBoard = (obj) => {
   const arr = obj.result;
   while (scoreBoard.firstChild) {
     scoreBoard.removeChild(scoreBoard.firstChild);
@@ -22,13 +22,14 @@ function populateBoard(obj) {
     cont.textContent = `${element.user}: ${element.score}`;
     scoreBoard.appendChild(cont);
   });
-}
+};
 
 refreshButton.addEventListener('click', () => {
   getScores();
 });
 
-submitButton.addEventListener('click', () => {
+submitButton.addEventListener('click', (e) => {
+  e.preventDefault();
   newScore(userName.value, userScore.value);
   getScores();
 });

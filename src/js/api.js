@@ -3,7 +3,7 @@ import populateBoard from '../index';
 
 const requestUrl = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/0pCiglrVtP9Y26ppM44Z/scores/';
 
-async function newScore(user, score) {
+const newScore = async (user, score) => {
   const response = await fetch(requestUrl, {
     method: 'POST',
     headers: {
@@ -14,14 +14,14 @@ async function newScore(user, score) {
       'score': score,
     }),
   });
-  return response.json();
-}
+  response.json();
+};
 
-async function getScores() {
+const getScores = async () => {
   const resp = await fetch(requestUrl)
     .then((response) => response.json())
     .then((data) => data);
   populateBoard(resp);
-}
+};
 
 export { newScore, getScores };
